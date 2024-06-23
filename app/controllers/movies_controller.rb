@@ -17,6 +17,11 @@ class MoviesController < ApplicationController
     render({ :template => "movies/show" })
   end
 
+
+  def new
+  render template: "movies/new"
+  end
+
   def create
     the_movie = Movie.new
     the_movie.title = params.fetch("query_title")
