@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   patch("/movies/:path_id", { :controller => "movies", :action => "update" })
   
   # DELETE
-  get("/delete_movie/:path_id", { :controller => "movies", :action => "destroy" })
+  delete("/movies/:path_id", { :controller => "movies", :action => "destroy" })
 
   #------------------------------
 
