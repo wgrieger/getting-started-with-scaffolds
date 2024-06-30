@@ -31,7 +31,7 @@ class MoviesController < ApplicationController
     @the_movie = matching_movies[0]
 
     render template: "movies/edit"
-    end
+  end
 
   def create
     the_movie = Movie.new
