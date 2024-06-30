@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+
   def index
     matching_movies = Movie.all
 
@@ -21,6 +22,16 @@ class MoviesController < ApplicationController
   def new
   render template: "movies/new"
   end
+
+  def edit
+    the_id = params.fetch("id")
+
+    matching_movies = Movie.where({ :id => the_id })
+
+    @the_movie = matching_movies[0]
+
+    render template: "movies/edit"
+    end
 
   def create
     the_movie = Movie.new
@@ -51,6 +62,7 @@ class MoviesController < ApplicationController
       redirect_to("/movies/#{the_movie.id}", { :alert => the_movie.errors.full_messages.to_sentence })
     end
   end
+
 
   def destroy
     the_id = params.fetch("id")
