@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "/", controller: :movies, action: :index
 
   get("/movies/new",{:controller => "movies", :action => "new"})
+  
   # CREATE
   post("/movies", { :controller => "movies", :action => "create" })
           
@@ -12,8 +13,8 @@ Rails.application.routes.draw do
   
   get("/movies/:id", { :controller => "movies", :action => "show" })
 
-  get "/movies/:id/edit", controller: "movies", action: "edit"
-  
+  get("/movies/:id/edit", {controller: "movies", action: "edit"})
+
   # UPDATE
 
   patch("/movies/:id", { :controller => "movies", :action => "update" })
